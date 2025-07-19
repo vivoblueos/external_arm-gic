@@ -1,0 +1,18 @@
+import("//build/templates/build_template.gni")
+
+build_rust("arm_gic") {
+  epoch = "0.2"
+  crate_type = "rlib"
+  sources = [ "//external/arm-gic/v0.2.2/src/lib.rs" ]
+  inputs = []
+
+  edition = "2021"
+  deps = [
+    "//external/bitflags/v2.9.0:bitflags",
+    "//external/thiserror/v2.0.9:thiserror",
+  ]
+
+  rustflags = [
+    "--cap-lints=allow",  # Suppress all warnings in crates.io crates
+  ]
+}

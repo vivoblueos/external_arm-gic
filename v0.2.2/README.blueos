@@ -1,0 +1,10 @@
+Name: arm-gic
+URL: https://crates.io/crates/arm-gic
+Version: 0.2.2
+Revision: 892af5fb81cdd818d1dbecdd54908668bb01be5d
+License: Apache-2.0
+License File: //external/bluekernel_crates_io/vendor/arm-gic-0.2.2/LICENSE-APACHE
+Shipped: yes
+Security Critical: yes
+
+Description: A driver for the Arm Generic Interrupt Controller version 2, 3 or 4.
