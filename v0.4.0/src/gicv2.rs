@@ -19,6 +19,12 @@ pub struct GicV2<'a> {
     gicc: UniqueMmioPointer<'a, Gicc>,
 }
 
+// SAFETY: The GIC interface can be accessed from any CPU core.
+unsafe impl Send for GicV2<'_> {}
+
+// SAFETY: Any operations which change state require `&mut GicV2`, so `&GicV2` is fine to share.
+unsafe impl Sync for GicV2<'_> {}
+
 impl GicV2<'_> {
     /// Constructs a new instance of the driver for a GIC with the given distributor and
     /// controller base addresses.
